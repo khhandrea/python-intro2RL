@@ -31,8 +31,13 @@ class Grid_DP:
         for state in range(self.state_num):
             self.state_values[state] = self.policy_rewards[state] + self.gamma * np.dot(self.policy_transitions[state], old_values)
 
-    def policy_improve(self) -> None:
+    def policy_improve(self) -> np.ndarray:
         print('improve!')
+        new_policies = self.polices.copy()
+        for state in range(self.state_num):
+            pass
+
+        return new_policies
 
     def print_value(self) -> None:
         for i in range(16):
