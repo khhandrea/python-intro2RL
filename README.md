@@ -21,5 +21,19 @@ Python reinforcement learning practice
 - Off-policy TD(0)
 - Q-learning
 
-- Least squares prediction
 - DQN
+- Least squares prediction
+  - LSMC
+  - LSTD
+  - LSTD(lambda)
+  - LSTDQ
+  - LSTD-PI
+
+- Finite difference policy gradient
+- Monte-Carlo policy gradient (Reinforce algorithm)
+- Actor-critic policy gradient
+  - Q actor-critic
+  - A2C
+  - TD AC
+  - TD(lambda) AC
+  - Natural AC
