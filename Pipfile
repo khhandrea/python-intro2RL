@@ -5,6 +5,8 @@ name = "pypi"
 
 [packages]
 numpy = "*"
+ipykernel = "*"
+gymnasium = {version = "*", extras = ["classic-control"]}
 
 [dev-packages]
 
