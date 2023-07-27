@@ -14,7 +14,7 @@ gamma = 1.0
 # Learning Rate
 alpha = 0.2
 alpha_decay = 0.9
-min_alpha = 0.1
+min_alpha = 0.01
 
 # find out when success
 ave_steps_per_episode = np.zeros((100, 1))
@@ -53,7 +53,7 @@ def final_agent_test():
 
 
 for i_episode in range(5000):
-    state = env.reset()
+    state, info = env.reset()
 
     # Value of current state's actions
     Q_state = q_vals(state)
@@ -65,17 +65,17 @@ for i_episode in range(5000):
         Q_state = q_vals(state)
 
         # System response to my action
-        next_state, reward, done, info = env.step(action)
+        next_state, reward, terminated, truncated, info = env.step(action)
 
         # value of taking the greedy action in the next state
         Q_next_state = q_vals(next_state)
         next_action = select_action(Q_next_state)
 
-        if done:
+        if terminated:
             reward = -200
 
         # Calculate TD Error
-        if done:
+        if terminated:
             td_error = reward
         else:
             td_error = reward + (gamma * Q_next_state[next_action]) - Q_state[action]
@@ -87,7 +87,7 @@ for i_episode in range(5000):
         state = next_state
         action = next_action
 
-        if done or t == 198:
+        if terminated or t == 198:
             if (i_episode + 1) % 10 == 0:
                 print("Episode {} finished after {} timesteps".format(i_episode+1, t+1))
             break

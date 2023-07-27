@@ -7,7 +7,7 @@ name = "pypi"
 numpy = "*"
 ipykernel = "*"
 matplotlib = "*"
-gymnasium = {version = "*", extras = ["box2d"]}
+gymnasium = "*"
 
 [dev-packages]
 
