@@ -1,3 +1,8 @@
+"""
+Linear value function approximation tutorial from
+https://github.com/roggirg/cartpole_rl/blob/master/cartpole_LVFA_SARSA.py
+"""
+
 import gymnasium as gym
 import numpy as np
 
